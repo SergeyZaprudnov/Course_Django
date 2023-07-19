@@ -5,8 +5,18 @@ description = ""
 authors = ["sergey <szaprudnov@hotmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.11"
-Django = "^4.2.3"
+python = "^3.10"
+djanpgo = "^4.2.3"
+psycopg2-binary = "^2.9.6"
+ipython = "^8.14.0"
+django-crontab = "^0.7.1"
+pillow = "^9.5.0"
+contact = "^1.0.5"
+redis = "^4.6.0"
+python-dotenv = "^1.0.0"
+config = "^0.5.1"
+celery = "^5.3.1"
+schedule = "^1.2.0"
 
 [tool.poetry.dev-dependencies]
 
