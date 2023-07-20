@@ -6,7 +6,7 @@ from my_work.models import Newsletter, Message, Log, Client
 class CustomerForm(forms.ModelForm):
     class Meta:
         model = Client
-        fields = ['full_name', 'email', 'comment']
+        fields = ['name', 'email', 'comment']
 
 
 class NewsletterForm(forms.ModelForm):
