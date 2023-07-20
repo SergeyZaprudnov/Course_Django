@@ -24,7 +24,7 @@ class NewsletterCreateView(generic.CreateView):
     model = Newsletter
     form_class = NewsletterForm
     template_name = 'my_work/newsletter/newsletter_form.html'
-    success_url = reverse_lazy('main:newsletters')
+    success_url = reverse_lazy('my_work:newsletters')
 
     def form_valid(self, form):
         form.instance.status = 'running'
@@ -60,7 +60,7 @@ class NewsletterUpdateView(generic.UpdateView):
 class NewsletterDeleteView(generic.DeleteView):
     model = Newsletter
     template_name = 'my_work/newsletter/newsletter_delete.html'
-    success_url = reverse_lazy('main:newsletters')
+    success_url = reverse_lazy('my_work:newsletters')
 
     def test_func(self):
         return self.request.user.is_superuser
