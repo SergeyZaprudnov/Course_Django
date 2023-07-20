@@ -3,7 +3,7 @@
 {% block content %}
     <div class="col-12">
         {% if user.is_active and not request.user.is_staff or user.is_superuser %}
-            <a href="{% url 'main:newsletter_create' %}" class="btn btn-secondary m-2">Добавить рассылку</a>
+            <a href="{% url 'my_work:newsletter_create' %}" class="btn btn-secondary m-2">Добавить рассылку</a>
         {% endif %}
     </div>
     {% for object in object_list %}
@@ -14,15 +14,15 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             {% if user.is_active and not request.user.is_staff or user.is_superuser %}
-                                <a href="{% url 'main:newsletter_update' object.pk %}"
+                                <a href="{% url 'my_work:newsletter_update' object.pk %}"
                                    class="btn btn-sm btn-outline-secondary">Редактировать рассылку</a>
                                 </div>
                                 <div class="btn-group">
-                                    <a href="{% url 'main:newsletter_detail' object.pk %}"
+                                    <a href="{% url 'my_work:newsletter_detail' object.pk %}"
                                        class="btn btn-sm btn-outline-secondary">Детализация рассылки</a>
                                 </div>
                                 <div class="btn-group">
-                                    <a href="{% url 'main:newsletter_delete' object.pk %}"
+                                    <a href="{% url 'my_work:newsletter_delete' object.pk %}"
                                        class="btn btn-sm btn-outline-secondary">Удалить рассылку</a>
                                 </div>
                             {% endif %}
@@ -32,6 +32,6 @@
         </div>
     {% endfor %}
     <div class="col-12">
-        <a href="{% url 'main:index' %}" class="btn btn-secondary m-2"><< Назад</a>
+        <a href="{% url 'my_work:index' %}" class="btn btn-secondary m-2"><< Назад</a>
     </div>
 {% endblock %}
