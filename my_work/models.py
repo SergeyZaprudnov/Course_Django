@@ -42,3 +42,9 @@ class Newsletter(models.Model):
         verbose_name_plural = 'Рассылки'
 
 
+class Message(models.Model):
+    newsletter = models.ForeignKey(Newsletter, verbose_name='Рассылка', on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = 'Сообщение'
+        verbose_name_plural = 'Сообщения'
