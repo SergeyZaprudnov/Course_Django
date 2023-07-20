@@ -3,7 +3,6 @@ from django.contrib import admin
 from my_work.models import Client, Newsletter, Message, Log
 
 
-
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
     list_display = ('email', 'full_name', 'comment')
