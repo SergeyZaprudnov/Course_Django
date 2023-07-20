@@ -1,0 +1,33 @@
+{% extends 'my_work/base.html' %}
+
+{% block content %}
+    <div class="col-12">
+        {% if user.is_authenticated and not request.user.is_staff or user.is_superuser %}
+            <a href="{% url 'main:customer_create' %}" class="btn btn-secondary m-2">Добавить клиента</a>
+        {% endif %}
+    </div>
+    {% for object in object_list %}
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <p class="card-text">{{ object|title }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        {% if user.is_authenticated and not request.user.is_staff or user.is_superuser %}
+                            <div class="btn-group">
+                                <a href="{% url 'main:customer_update' object.pk %}"
+                                   class="btn btn-sm btn-outline-secondary">Редактировать клиента</a>
+                            </div>
+                            <div class="btn-group">
+                                <a href="{% url 'main:customer_delete' object.pk %}"
+                                   class="btn btn-sm btn-outline-secondary">Удалить клиента</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <div class="col-12">
+        <a href="{% url 'main:index' %}" class="btn btn-secondary m-2"><< Назад</a>
+    </div>
+{% endblock %}

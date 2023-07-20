@@ -5,9 +5,9 @@ from my_work.models import Client, Newsletter, Message, Log
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
-    list_display = ('email', 'full_name', 'comment')
-    list_filter = ('email', 'full_name', 'comment')
-    search_fields = ('email', 'full_name')
+    list_display = ('email', 'name', 'comment')
+    list_filter = ('email', 'name', 'comment')
+    search_fields = ('email', 'name')
 
 
 @admin.register(Newsletter)

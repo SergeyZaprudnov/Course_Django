@@ -1,0 +1,40 @@
+{% extends 'my_work/base.html' %}
+
+{% block content %}
+    <div class="col-md-6">
+        <div class="card mb-4 box-shadow">
+            <div class="card-body">
+                <p class="card-text">
+                    Офисы в Москве:<br>
+                    - ул. Профсоюзная, д. 123, офис 456<br>
+                    - ул. Ленина, д. 321, офис 654<br/>
+                    <br>
+                    Офисы в Санкт-Петербурге:<br>
+                    - наб. реки Мойки, д. 111, офис 222<br>
+                    - ул. Невский проспект, д. 333, офис 444
+                </p>
+            </div>
+        </div>
+        <div class="col-12">
+            <a href="{% url 'main:index' %}" class="btn btn-secondary m-2"><< Назад</a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card md-4 box-shadow">
+            <div class="card">
+                <div class="card-body align-items-end">
+                    <h5 class="card-title text-muted">Свяжитесь с нами!</h5>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input class="form-control mb-2" name="name" placeholder="Имя"/>
+                        <input class="form-control mb-2" name="email" placeholder="Email"/>
+                        <textarea class="form-control mb-2" name="message"
+                                  placeholder="Сообщение"></textarea>
+                        <button type="submit" class="btn btn-secondary m-2">Отправить
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
