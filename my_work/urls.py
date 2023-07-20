@@ -29,6 +29,6 @@ urlpatterns = [
     path('messages/create/', MessageCreateView.as_view(), name='message_create'),
     path('messages/update/<int:pk>/', MessageUpdateView.as_view(), name='message_update'),
     path('messages/delete/<int:pk>/', MessageDeleteView.as_view(), name='message_delete'),
-    path('logs/', cache_page(60)(LogListView.as_view()), name='logs'),
+    path('logs/', cache_page(60)(LogListView.as_view()), name='log'),
     path('log_details/<int:pk>/', LogDetailView.as_view(), name='log_details'),
 ]
