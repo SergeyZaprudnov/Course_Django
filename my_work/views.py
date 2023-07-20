@@ -5,7 +5,7 @@ def index(request):
     context = {
         'title': 'Главная',
     }
-    return render(request, 'main/index.html', context)
+    return render(request, 'my_work/index.html', context)
 
 
 def contact(request):
@@ -19,4 +19,4 @@ def contact(request):
         'title': 'Контакты'
     }
 
-    return render(request, 'main/contact.html', context)
+    return render(request, 'my_work/contact.html', context)
