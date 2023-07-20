@@ -33,7 +33,7 @@ MANIFEST
 *.manifest
 *.spec
 
-# Installer logs
+# Installer log
 pip-log.txt
 pip-delete-this-directory.txt
 
@@ -129,11 +129,11 @@ ENV/
 env.bak/
 venv.bak/
 
-# Spyder project settings
+# Spyder project newsletter
 .spyderproject
 .spyproject
 
-# Rope project settings
+# Rope project newsletter
 .ropeproject
 
 # mkdocs documentation
