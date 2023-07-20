@@ -6,7 +6,7 @@ authors = ["sergey <szaprudnov@hotmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-djanpgo = "^4.2.3"
+django = "^4.2.3"
 psycopg2-binary = "^2.9.6"
 ipython = "^8.14.0"
 django-crontab = "^0.7.1"
