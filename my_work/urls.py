@@ -3,7 +3,11 @@ from my_work.apps import MyWorkConfig
 from django.views.decorators.cache import cache_page
 
 from my_work.utils.client_foo import CustomerListView, CustomerCreateView, CustomerUpdateView, CustomerDeleteView
-from my_work.utils.index_view import IndexView
+from my_work.utils.index_foo import IndexView
+from my_work.utils.log_foo import LogListView, LogDetailView
+from my_work.utils.message_foo import MessageListView, MessageCreateView, MessageUpdateView, MessageDeleteView
+from my_work.utils.newsletter_foo import NewsletterListView, NewsletterCreateView, NewsletterDetailView, \
+    NewsletterUpdateView, NewsletterDeleteView
 
 from my_work.views import contact
 
