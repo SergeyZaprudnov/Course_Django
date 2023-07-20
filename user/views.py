@@ -64,7 +64,7 @@ class EmailConfirmedView(TemplateView):
 
 
 class UserPasswordResetView(PasswordResetView):
-    email_template_name = 'users/registration/pass_res_email.html'
+    email_template_name = 'user/registration/pass_res_email.html'
     template_name = 'user/registration/pass_res_form.html'
     success_url = reverse_lazy('user:pass_res_done')
 
