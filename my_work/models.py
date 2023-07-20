@@ -48,3 +48,23 @@ class Message(models.Model):
     class Meta:
         verbose_name = 'Сообщение'
         verbose_name_plural = 'Сообщения'
+
+
+class Log(models.Model):
+    STATUS_CHOICES = (
+        ('success', 'Успешно'),
+        ('error', 'Ошибка'),
+    )
+
+    message = models.ForeignKey(Message, on_delete=models.CASCADE, verbose_name='Сообщение')
+    timestamp = models.DateTimeField(auto_now_add=True, verbose_name='Последняя попытка')
+    status = models.CharField(max_length=30, choices=STATUS_CHOICES, verbose_name='Статус попытки')
+    response = models.TextField(verbose_name='Ответ от сервера')
+
+    def __str__(self):
+        return f"Время рассылки: {self.timestamp}\n"
+
+    class Meta:
+        verbose_name = 'Лог'
+        verbose_name_plural = 'Логи'
+        ordering = ["-timestamp"]
