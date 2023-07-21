@@ -7,7 +7,7 @@ from django.core.mail import send_mail
 def send_verification_email(user):
     token = default_token_generator.make_token(user)
     uid = user.pk
-    verification_link = reverse_lazy('users:verify_email', kwargs={'uidb64': uid, 'token': token})
+    verification_link = reverse_lazy('user:verify_email', kwargs={'uidb64': uid, 'token': token})
     site = settings.SITE_ADRES
     subject = 'Поздравляем Вас с регистрацией!'
     message = f'Вы почти зарегистрировались на нашей платформе!' \
