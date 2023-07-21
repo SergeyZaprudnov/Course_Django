@@ -16,6 +16,5 @@ def send_verification_email(user):
     recipient_list = [user.email]
     send_mail(subject, message, from_email, recipient_list)
 
-
     user.email_verified = True
     user.save()
